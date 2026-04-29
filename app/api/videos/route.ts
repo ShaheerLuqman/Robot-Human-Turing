@@ -8,11 +8,13 @@ type VideoRow = {
   id: string;
   url: string;
   label: VideoLabel;
+  method: string;
+  environment: string;
 };
 
 export async function GET() {
   const result = await db.query<VideoRow>(
-    `select id, url, label from videos order by id asc`
+    `select id, url, label, method, environment from videos order by id asc`
   );
   return NextResponse.json(result.rows);
 }

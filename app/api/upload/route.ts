@@ -34,9 +34,19 @@ function uploadMediaToCloudinary(fileBuffer: Buffer, filename: string): Promise<
 export async function POST(req: NextRequest) {
   const formData = await req.formData();
   const label = formData.get("label");
+  const method = formData.get("method");
+  const environment = formData.get("environment");
   const file = formData.get("video");
+  const normalizedLabel = typeof label === "string" ? label.trim().toLowerCase() : "";
+  const normalizedMethod = typeof method === "string" ? method.trim() : "";
+  const normalizedEnvironment = typeof environment === "string" ? environment.trim() : "";
 
-  if ((label !== "human" && label !== "robot") || !(file instanceof File)) {
+  if (
+    (normalizedLabel !== "human" && normalizedLabel !== "robot") ||
+    !normalizedMethod ||
+    !normalizedEnvironment ||
+    !(file instanceof File)
+  ) {
     return NextResponse.json({ error: "Invalid form payload" }, { status: 400 });
   }
 
@@ -54,13 +64,15 @@ export async function POST(req: NextRequest) {
   const videoId = `vid_${randomUUID().replace(/-/g, "")}`;
 
   await db.query(
-    `insert into videos (id, url, label) values ($1, $2, $3)`,
-    [videoId, uploadedUrl, label as VideoLabel]
+    `insert into videos (id, url, label, method, environment) values ($1, $2, $3, $4, $5)`,
+    [videoId, uploadedUrl, normalizedLabel as VideoLabel, normalizedMethod, normalizedEnvironment]
   );
 
   return NextResponse.json({
     id: videoId,
     url: uploadedUrl,
-    label
+    label: normalizedLabel,
+    method: normalizedMethod,
+    environment: normalizedEnvironment
   });
 }

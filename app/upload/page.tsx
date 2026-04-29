@@ -7,10 +7,14 @@ type UploadResult = {
   id: string;
   url: string;
   label: VideoLabel;
+  method: string;
+  environment: string;
 };
 
 export default function UploadPage() {
   const [label, setLabel] = useState<VideoLabel>("human");
+  const [method, setMethod] = useState("");
+  const [environment, setEnvironment] = useState("");
   const [file, setFile] = useState<File | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState("");
@@ -30,6 +34,8 @@ export default function UploadPage() {
     const formData = new FormData();
     formData.append("video", file);
     formData.append("label", label);
+    formData.append("method", method);
+    formData.append("environment", environment);
 
     const res = await fetch("/api/upload", {
       method: "POST",
@@ -69,6 +75,32 @@ export default function UploadPage() {
         </select>
 
         <label className="small" htmlFor="video" style={{ display: "block", marginTop: "14px" }}>
+          Method
+        </label>
+        <input
+          id="method"
+          type="text"
+          value={method}
+          onChange={(e) => setMethod(e.target.value)}
+          disabled={submitting}
+          style={{ width: "100%", padding: "10px", marginTop: "6px", borderRadius: "8px" }}
+          placeholder="e.g. teleop, scripted, policy-v2"
+        />
+
+        <label className="small" htmlFor="environment" style={{ display: "block", marginTop: "14px" }}>
+          Environment
+        </label>
+        <input
+          id="environment"
+          type="text"
+          value={environment}
+          onChange={(e) => setEnvironment(e.target.value)}
+          disabled={submitting}
+          style={{ width: "100%", padding: "10px", marginTop: "6px", borderRadius: "8px" }}
+          placeholder="e.g. kitchen, sim-lab-1"
+        />
+
+        <label className="small" htmlFor="video" style={{ display: "block", marginTop: "14px" }}>
           Video or GIF file
         </label>
         <input
@@ -80,7 +112,7 @@ export default function UploadPage() {
           style={{ width: "100%", marginTop: "6px" }}
         />
 
-        <button className="btn" type="submit" disabled={submitting || !file}>
+        <button className="btn" type="submit" disabled={submitting || !file || !method.trim() || !environment.trim()}>
           {submitting ? "Uploading..." : "Upload"}
         </button>
       </form>
@@ -91,6 +123,8 @@ export default function UploadPage() {
           <h3>Stored Video</h3>
           <p className="small">ID: {result.id}</p>
           <p className="small">Label: {result.label}</p>
+          <p className="small">Method: {result.method}</p>
+          <p className="small">Environment: {result.environment}</p>
           <p className="small">URL: {result.url}</p>
         </section>
       ) : null}

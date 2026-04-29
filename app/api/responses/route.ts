@@ -11,7 +11,9 @@ type VideoRow = {
 };
 
 type SubmitPayload = {
-  video_id: string;
+  left_video_id: string;
+  right_video_id: string;
+  selected_video_id: string;
   selected_label: VideoLabel;
 };
 
@@ -24,34 +26,50 @@ export async function POST(req: NextRequest) {
   }
 
   if (
-    !payload?.video_id ||
+    !payload?.left_video_id ||
+    !payload?.right_video_id ||
+    !payload?.selected_video_id ||
     !["human", "robot"].includes(payload?.selected_label)
   ) {
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }
 
-  const videoResult = await db.query<VideoRow>(
-    `select id, label from videos where id = $1 limit 1`,
-    [payload.video_id]
+  const videosResult = await db.query<VideoRow>(
+    `select id, label from videos where id = any($1::text[])`,
+    [[payload.left_video_id, payload.right_video_id]]
   );
 
-  if (!videoResult.rows.length) {
-    return NextResponse.json({ error: "Video not found" }, { status: 404 });
+  if (videosResult.rows.length !== 2) {
+    return NextResponse.json({ error: "Trial videos not found" }, { status: 404 });
   }
 
-  const video = videoResult.rows[0];
+  const trialById = new Map(videosResult.rows.map((video) => [video.id, video]));
+  if (!trialById.has(payload.selected_video_id)) {
+    return NextResponse.json({ error: "Selected video must be one of the trial videos" }, { status: 400 });
+  }
+
+  const humanVideo = videosResult.rows.find((video) => video.label === "human");
+  const robotVideo = videosResult.rows.find((video) => video.label === "robot");
+  if (!humanVideo || !robotVideo) {
+    return NextResponse.json(
+      { error: "Trial must include one human video and one robot video" },
+      { status: 400 }
+    );
+  }
+
+  const selectedVideo = trialById.get(payload.selected_video_id)!;
   const responseId = `resp_${randomUUID().replace(/-/g, "")}`;
 
   await db.query(
     `
-    insert into responses (id, video_id, selected_label)
-    values ($1, $2, $3)
+    insert into responses (id, selected_video_id, human_video_id, robot_video_id, selected_label)
+    values ($1, $2, $3, $4, $5)
     `,
-    [responseId, payload.video_id, payload.selected_label]
+    [responseId, payload.selected_video_id, humanVideo.id, robotVideo.id, payload.selected_label]
   );
 
   return NextResponse.json({
     response_id: responseId,
-    actual_label: video.label
+    actual_label: selectedVideo.label
   });
 }

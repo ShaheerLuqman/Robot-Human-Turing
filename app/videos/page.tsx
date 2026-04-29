@@ -59,6 +59,8 @@ export default function VideosPage() {
                 <th>ID</th>
                 <th>URL</th>
                 <th>Label</th>
+                <th>Method</th>
+                <th>Environment</th>
               </tr>
             </thead>
             <tbody>
@@ -71,6 +73,8 @@ export default function VideosPage() {
                     </a>
                   </td>
                   <td>{video.label}</td>
+                  <td>{video.method}</td>
+                  <td>{video.environment}</td>
                 </tr>
               ))}
             </tbody>
