@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
   }
 
   const video = videoResult.rows[0];
-  const responseId = `resp_${randomUUID().replaceAll("-", "")}`;
+  const responseId = `resp_${randomUUID().replace(/-/g, "")}`;
 
   await db.query(
     `

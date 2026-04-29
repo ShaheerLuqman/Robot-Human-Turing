@@ -1,5 +1,4 @@
 import { Pool } from "pg";
-import dns from "dns";
 
 const connectionString = process.env.DATABASE_URL;
 
@@ -16,10 +15,6 @@ export const db =
   global.__dbPool ||
   new Pool({
     connectionString,
-    family: 4,
-    lookup: (hostname, options, callback) => {
-      dns.lookup(hostname, { ...options, family: 4, all: false }, callback);
-    },
     ssl: connectionString.includes("localhost")
       ? false
       : {

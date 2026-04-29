@@ -13,7 +13,7 @@ function uploadMediaToCloudinary(fileBuffer: Buffer, filename: string): Promise<
       {
         resource_type: "auto",
         folder: "robot-human-turing",
-        public_id: `vid_${randomUUID().replaceAll("-", "")}`,
+        public_id: `vid_${randomUUID().replace(/-/g, "")}`,
         use_filename: true,
         unique_filename: false,
         filename_override: filename
@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
 
   const buffer = Buffer.from(await file.arrayBuffer());
   const uploadedUrl = await uploadMediaToCloudinary(buffer, file.name);
-  const videoId = `vid_${randomUUID().replaceAll("-", "")}`;
+  const videoId = `vid_${randomUUID().replace(/-/g, "")}`;
 
   await db.query(
     `insert into videos (id, url, label) values ($1, $2, $3)`,
