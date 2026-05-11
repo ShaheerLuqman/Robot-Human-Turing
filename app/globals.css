@@ -319,7 +319,6 @@ main {
 
 .video-hidden {
   opacity: 0;
-  visibility: hidden;
 }
 
 .primary-btn {
@@ -623,6 +622,30 @@ main {
 
 .trial-header-top h1 {
   margin: 0;
+}
+
+.trial-header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reset-btn {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.reset-btn:hover {
+  background: #fff0f0;
+  border-color: #fca5a5;
+  color: #b91c1c;
 }
 
 .progress-badge {

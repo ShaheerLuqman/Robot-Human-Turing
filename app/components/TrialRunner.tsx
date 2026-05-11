@@ -56,6 +56,7 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
   const [hydrated, setHydrated] = useState(false);
 
   const [mediaReady, setMediaReady] = useState({ a: false, b: false });
+  const [transitioning, setTransitioning] = useState(false);
   const [selected, setSelected] = useState<"a" | "b" | null>(null);
   const [verdict, setVerdict] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState("");
@@ -75,8 +76,19 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
   const watchdogRef = useRef<number | null>(null);
   const advanceTimerRef = useRef<number | null>(null);
 
-  const trial = trials[index];
-  const allReady = mediaReady.a && mediaReady.b;
+  const trialRaw = trials[index];
+  // Randomise left/right assignment per trial, stable for the same index
+  const swapped = useRef<boolean[]>([]);
+  if (swapped.current.length <= index) {
+    swapped.current.push(Math.random() < 0.5);
+  }
+  const isSwapped = swapped.current[index];
+  const trial = trialRaw ? {
+    ...trialRaw,
+    video_a: isSwapped ? trialRaw.video_b : trialRaw.video_a,
+    video_b: isSwapped ? trialRaw.video_a : trialRaw.video_b,
+  } : trialRaw;
+  const allReady = mediaReady.a && mediaReady.b && !transitioning;
   const isLast = index === trials.length - 1;
 
   useEffect(() => {
@@ -95,6 +107,7 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
 
   useEffect(() => {
     setMediaReady({ a: false, b: false });
+    setTransitioning(false);
     setSelected(null);
     setVerdict(null);
     setErrorMessage("");
@@ -104,9 +117,8 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
     if (watchdogRef.current) window.clearTimeout(watchdogRef.current);
     if (allReady) return;
     watchdogRef.current = window.setTimeout(() => {
-      setErrorMessage("Loading took too long. Retrying...");
       setReloadNonce((n) => n + 1);
-    }, 12000);
+    }, 1000);
     return () => { if (watchdogRef.current) window.clearTimeout(watchdogRef.current); };
   }, [index, reloadNonce, allReady]);
 
@@ -193,10 +205,11 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
     }];
     setAnswers(next);
     setVerdict("Answer recorded");
+    setTransitioning(true);
     advanceTimerRef.current = window.setTimeout(() => {
       setIndex((i) => i + 1);
       setReloadNonce(0);
-    }, 2000);
+    }, 1000);
   }
 
   function openSubmitModal() {
@@ -271,13 +284,10 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
           ) : null}
           <video
             key={`${video.id}-${reloadNonce}`}
-            className={`video home-video ${allReady ? "" : "video-hidden"}`}
+            className="video home-video"
             ref={side === "a" ? videoARef : videoBRef}
-            controls={allReady}
+            controls
             preload="auto"
-            onLoadedMetadata={() => setReady(side)}
-            onLoadedData={() => setReady(side)}
-            onCanPlay={() => setReady(side)}
             onCanPlayThrough={() => setReady(side)}
             onPlay={() => syncPlay(side)}
             onPause={() => syncPause(side)}
@@ -296,8 +306,29 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
     <main className="home-main">
       <header className="trial-header">
         <div className="trial-header-top">
-          <h1>{title}</h1>
-          <span className="progress-badge">{index + 1} / {trials.length}</span>
+          <div className="trial-header-left">
+            <a href="/" className="home-btn" title="Back to home">← Home</a>
+            <h1>{title}</h1>
+          </div>
+          <div className="trial-header-right">
+            <span className="progress-badge">{index + 1} / {trials.length}</span>
+            <button
+              className="reset-btn"
+              title="Restart test"
+              onClick={() => {
+                if (!confirm("Restart the test? All progress will be lost.")) return;
+                clearProgress(testType);
+                setIndex(0);
+                setAnswers([]);
+                setTransitioning(false);
+                setVerdict(null);
+                setSelected(null);
+                setReloadNonce(0);
+              }}
+            >
+              ↺ Reset
+            </button>
+          </div>
         </div>
         <p className="small">{subtitle}</p>
         <div className="progress-track" role="progressbar" aria-valuenow={index + 1} aria-valuemin={1} aria-valuemax={trials.length}>
@@ -307,7 +338,7 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
 
       <section className="card home-card trial-card">
         <div className="trial-card-head trial-card-status">
-          <h3>Trial {index + 1} &mdash; {trial.environment}</h3>
+          <h3>Trial {index + 1}</h3>
           <div className="trial-card-status-right">
             <span className={`video-status ${allReady ? "ready" : "pending"}`}>
               {allReady ? "Both videos loaded" : "Videos loading..."}
