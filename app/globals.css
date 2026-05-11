@@ -624,6 +624,35 @@ main {
   margin: 0;
 }
 
+.trial-header-top {
+  align-items: center;
+}
+
+.trial-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.home-btn {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+  white-space: nowrap;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.home-btn:hover {
+  background: #eef4ff;
+  border-color: #b7cdf7;
+  color: var(--primary);
+}
+
 .trial-header-right {
   display: flex;
   align-items: center;
