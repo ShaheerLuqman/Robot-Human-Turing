@@ -9,3 +9,5 @@ __pycache__/
 .env
 .venv/
 *.sqlite3
+*.tsbuildinfo
+responses/
