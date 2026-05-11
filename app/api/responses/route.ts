@@ -1,20 +1,23 @@
 import { randomUUID } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import type { VideoLabel } from "@/lib/types";
 
 export const runtime = "nodejs";
 
-type VideoRow = {
-  id: string;
-  label: VideoLabel;
+type TrialAnswer = {
+  trial_id: string;
+  environment: string;
+  video_a: { id: string; url: string; method: string; label: string };
+  video_b: { id: string; url: string; method: string; label: string };
+  selected: "a" | "b";
+  correct: boolean;
 };
 
 type SubmitPayload = {
-  left_video_id: string;
-  right_video_id: string;
-  selected_video_id: string;
-  selected_label: VideoLabel;
+  name: string;
+  email: string;
+  test_type: "turing" | "ranking";
+  answers: TrialAnswer[];
 };
 
 export async function POST(req: NextRequest) {
@@ -26,50 +29,32 @@ export async function POST(req: NextRequest) {
   }
 
   if (
-    !payload?.left_video_id ||
-    !payload?.right_video_id ||
-    !payload?.selected_video_id ||
-    !["human", "robot"].includes(payload?.selected_label)
+    !payload?.name?.trim() ||
+    !payload?.email?.trim() ||
+    !["turing", "ranking"].includes(payload?.test_type) ||
+    !Array.isArray(payload?.answers) ||
+    payload.answers.length === 0
   ) {
     return NextResponse.json({ error: "Invalid payload" }, { status: 400 });
   }
 
-  const videosResult = await db.query<VideoRow>(
-    `select id, label from videos where id = any($1::text[])`,
-    [[payload.left_video_id, payload.right_video_id]]
-  );
+  const id = `${payload.test_type}_${randomUUID().replace(/-/g, "")}`;
+  const submittedAt = new Date().toISOString();
 
-  if (videosResult.rows.length !== 2) {
-    return NextResponse.json({ error: "Trial videos not found" }, { status: 404 });
-  }
-
-  const trialById = new Map(videosResult.rows.map((video) => [video.id, video]));
-  if (!trialById.has(payload.selected_video_id)) {
-    return NextResponse.json({ error: "Selected video must be one of the trial videos" }, { status: 400 });
-  }
-
-  const humanVideo = videosResult.rows.find((video) => video.label === "human");
-  const robotVideo = videosResult.rows.find((video) => video.label === "robot");
-  if (!humanVideo || !robotVideo) {
-    return NextResponse.json(
-      { error: "Trial must include one human video and one robot video" },
-      { status: 400 }
-    );
-  }
-
-  const selectedVideo = trialById.get(payload.selected_video_id)!;
-  const responseId = `resp_${randomUUID().replace(/-/g, "")}`;
+  const data = {
+    id,
+    submitted_at: submittedAt,
+    name: payload.name.trim(),
+    email: payload.email.trim(),
+    test_type: payload.test_type,
+    answers: payload.answers,
+  };
 
   await db.query(
-    `
-    insert into responses (id, selected_video_id, human_video_id, robot_video_id, selected_label)
-    values ($1, $2, $3, $4, $5)
-    `,
-    [responseId, payload.selected_video_id, humanVideo.id, robotVideo.id, payload.selected_label]
+    `insert into responses (id, submitted_at, name, email, test_type, data)
+     values ($1, $2, $3, $4, $5, $6)`,
+    [id, submittedAt, data.name, data.email, data.test_type, JSON.stringify(data)]
   );
 
-  return NextResponse.json({
-    response_id: responseId,
-    actual_label: selectedVideo.label
-  });
+  return NextResponse.json({ id });
 }

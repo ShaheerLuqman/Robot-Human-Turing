@@ -1,0 +1,646 @@
+[
+  {
+    "id": "vid_HiMAQ_IQL_door_1",
+    "url": "/videos/HiMAQ/IQL/door/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_door_MAQIQL_seq3_k16_c0_1_seed2000_score17_98_len200_20260511_092518",
+    "url": "/videos/HiMAQ/IQL/door/MAQIQL_seq3_k16_c0.1_seed2000_score17.98_len200_20260511_092518.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_door_MAQIQL_seq3_k16_c0_1_seed2001_score31_58_len200_20260511_092519",
+    "url": "/videos/HiMAQ/IQL/door/MAQIQL_seq3_k16_c0.1_seed2001_score31.58_len200_20260511_092519.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_door_MAQIQL_seq3_k16_c0_1_seed2002_score25_56_len200_20260511_092520",
+    "url": "/videos/HiMAQ/IQL/door/MAQIQL_seq3_k16_c0.1_seed2002_score25.56_len200_20260511_092520.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_door_MAQIQL_seq3_k16_c0_1_seed2003_score16_35_len200_20260511_092521",
+    "url": "/videos/HiMAQ/IQL/door/MAQIQL_seq3_k16_c0.1_seed2003_score16.35_len200_20260511_092521.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_door_MAQIQL_seq3_k16_c0_1_seed2004_score22_48_len200_20260511_092522",
+    "url": "/videos/HiMAQ/IQL/door/MAQIQL_seq3_k16_c0.1_seed2004_score22.48_len200_20260511_092522.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_hammer_1",
+    "url": "/videos/HiMAQ/IQL/hammer/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_hammer_MAQIQL_seq3_k16_c0_1_seed200_score59_84_len200_20260511_092501",
+    "url": "/videos/HiMAQ/IQL/hammer/MAQIQL_seq3_k16_c0.1_seed200_score59.84_len200_20260511_092501.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_hammer_MAQIQL_seq3_k16_c0_1_seed201_score64_69_len200_20260511_092503",
+    "url": "/videos/HiMAQ/IQL/hammer/MAQIQL_seq3_k16_c0.1_seed201_score64.69_len200_20260511_092503.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_hammer_MAQIQL_seq3_k16_c0_1_seed202_score64_68_len200_20260511_092504",
+    "url": "/videos/HiMAQ/IQL/hammer/MAQIQL_seq3_k16_c0.1_seed202_score64.68_len200_20260511_092504.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_hammer_MAQIQL_seq3_k16_c0_1_seed203_score61_56_len200_20260511_092505",
+    "url": "/videos/HiMAQ/IQL/hammer/MAQIQL_seq3_k16_c0.1_seed203_score61.56_len200_20260511_092505.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_hammer_MAQIQL_seq3_k16_c0_1_seed204_score43_05_len200_20260511_092507",
+    "url": "/videos/HiMAQ/IQL/hammer/MAQIQL_seq3_k16_c0.1_seed204_score43.05_len200_20260511_092507.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_pen_1",
+    "url": "/videos/HiMAQ/IQL/pen/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_pen_MAQIQL_seq3_k16_c0_1_seed20000_score96_58_len100_20260511_092441",
+    "url": "/videos/HiMAQ/IQL/pen/MAQIQL_seq3_k16_c0.1_seed20000_score96.58_len100_20260511_092441.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_pen_MAQIQL_seq3_k16_c0_1_seed20001_score137_32_len100_20260511_092442",
+    "url": "/videos/HiMAQ/IQL/pen/MAQIQL_seq3_k16_c0.1_seed20001_score137.32_len100_20260511_092442.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_pen_MAQIQL_seq3_k16_c0_1_seed20002_score19_98_len100_20260511_092442",
+    "url": "/videos/HiMAQ/IQL/pen/MAQIQL_seq3_k16_c0.1_seed20002_score19.98_len100_20260511_092442.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_pen_MAQIQL_seq3_k16_c0_1_seed20003_score102_28_len100_20260511_092443",
+    "url": "/videos/HiMAQ/IQL/pen/MAQIQL_seq3_k16_c0.1_seed20003_score102.28_len100_20260511_092443.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_pen_MAQIQL_seq3_k16_c0_1_seed20004_score146_87_len100_20260511_092444",
+    "url": "/videos/HiMAQ/IQL/pen/MAQIQL_seq3_k16_c0.1_seed20004_score146.87_len100_20260511_092444.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_relocate_1",
+    "url": "/videos/HiMAQ/IQL/relocate/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_relocate_MAQIQL_seq3_k16_c0_1_seed2000_score0_05_len200_20260511_092329",
+    "url": "/videos/HiMAQ/IQL/relocate/MAQIQL_seq3_k16_c0.1_seed2000_score0.05_len200_20260511_092329.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_relocate_MAQIQL_seq3_k16_c0_1_seed2001_score0_37_len200_20260511_092330",
+    "url": "/videos/HiMAQ/IQL/relocate/MAQIQL_seq3_k16_c0.1_seed2001_score0.37_len200_20260511_092330.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_relocate_MAQIQL_seq3_k16_c0_1_seed2002_score0_95_len200_20260511_092331",
+    "url": "/videos/HiMAQ/IQL/relocate/MAQIQL_seq3_k16_c0.1_seed2002_score0.95_len200_20260511_092331.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_relocate_MAQIQL_seq3_k16_c0_1_seed2003_score1_06_len200_20260511_092332",
+    "url": "/videos/HiMAQ/IQL/relocate/MAQIQL_seq3_k16_c0.1_seed2003_score1.06_len200_20260511_092332.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_IQL_relocate_MAQIQL_seq3_k16_c0_1_seed2004_score1_47_len200_20260511_092333",
+    "url": "/videos/HiMAQ/IQL/relocate/MAQIQL_seq3_k16_c0.1_seed2004_score1.47_len200_20260511_092333.mp4",
+    "label": "robot",
+    "method": "HiMAQ_IQL",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_door_1",
+    "url": "/videos/HiMAQ/RLPD/door/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_door_MAQRLPD_seq3_k16_c0_1_seed2000_score34_51_len200_20260511_092851",
+    "url": "/videos/HiMAQ/RLPD/door/MAQRLPD_seq3_k16_c0.1_seed2000_score34.51_len200_20260511_092851.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_door_MAQRLPD_seq3_k16_c0_1_seed2001_score38_67_len200_20260511_092852",
+    "url": "/videos/HiMAQ/RLPD/door/MAQRLPD_seq3_k16_c0.1_seed2001_score38.67_len200_20260511_092852.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_door_MAQRLPD_seq3_k16_c0_1_seed2002_score29_01_len200_20260511_092854",
+    "url": "/videos/HiMAQ/RLPD/door/MAQRLPD_seq3_k16_c0.1_seed2002_score29.01_len200_20260511_092854.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_door_MAQRLPD_seq3_k16_c0_1_seed2003_score32_79_len200_20260511_092855",
+    "url": "/videos/HiMAQ/RLPD/door/MAQRLPD_seq3_k16_c0.1_seed2003_score32.79_len200_20260511_092855.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_door_MAQRLPD_seq3_k16_c0_1_seed2004_score30_48_len200_20260511_092856",
+    "url": "/videos/HiMAQ/RLPD/door/MAQRLPD_seq3_k16_c0.1_seed2004_score30.48_len200_20260511_092856.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_hammer_1",
+    "url": "/videos/HiMAQ/RLPD/hammer/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_hammer_MAQRLPD_seq3_k16_c0_1_seed200_score81_03_len200_20260511_093044",
+    "url": "/videos/HiMAQ/RLPD/hammer/MAQRLPD_seq3_k16_c0.1_seed200_score81.03_len200_20260511_093044.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_hammer_MAQRLPD_seq3_k16_c0_1_seed201_score9_45_len200_20260511_093046",
+    "url": "/videos/HiMAQ/RLPD/hammer/MAQRLPD_seq3_k16_c0.1_seed201_score9.45_len200_20260511_093046.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_hammer_MAQRLPD_seq3_k16_c0_1_seed202_score23_46_len200_20260511_093047",
+    "url": "/videos/HiMAQ/RLPD/hammer/MAQRLPD_seq3_k16_c0.1_seed202_score23.46_len200_20260511_093047.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_hammer_MAQRLPD_seq3_k16_c0_1_seed203_score46_26_len200_20260511_093048",
+    "url": "/videos/HiMAQ/RLPD/hammer/MAQRLPD_seq3_k16_c0.1_seed203_score46.26_len200_20260511_093048.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_hammer_MAQRLPD_seq3_k16_c0_1_seed204_score2_37_len200_20260511_093050",
+    "url": "/videos/HiMAQ/RLPD/hammer/MAQRLPD_seq3_k16_c0.1_seed204_score2.37_len200_20260511_093050.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_pen_1",
+    "url": "/videos/HiMAQ/RLPD/pen/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_pen_MAQRLPD_seq3_k16_c0_1_seed20000_score131_53_len100_20260511_093125",
+    "url": "/videos/HiMAQ/RLPD/pen/MAQRLPD_seq3_k16_c0.1_seed20000_score131.53_len100_20260511_093125.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_pen_MAQRLPD_seq3_k16_c0_1_seed20001_score137_67_len100_20260511_093126",
+    "url": "/videos/HiMAQ/RLPD/pen/MAQRLPD_seq3_k16_c0.1_seed20001_score137.67_len100_20260511_093126.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_pen_MAQRLPD_seq3_k16_c0_1_seed20002_score21_29_len100_20260511_093127",
+    "url": "/videos/HiMAQ/RLPD/pen/MAQRLPD_seq3_k16_c0.1_seed20002_score21.29_len100_20260511_093127.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_pen_MAQRLPD_seq3_k16_c0_1_seed20003_score88_13_len100_20260511_093128",
+    "url": "/videos/HiMAQ/RLPD/pen/MAQRLPD_seq3_k16_c0.1_seed20003_score88.13_len100_20260511_093128.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_pen_MAQRLPD_seq3_k16_c0_1_seed20004_score124_35_len100_20260511_093128",
+    "url": "/videos/HiMAQ/RLPD/pen/MAQRLPD_seq3_k16_c0.1_seed20004_score124.35_len100_20260511_093128.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_relocate_1",
+    "url": "/videos/HiMAQ/RLPD/relocate/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_relocate_MAQRLPD_seq3_k16_c0_1_seed200_score1_97_len200_20260511_093152",
+    "url": "/videos/HiMAQ/RLPD/relocate/MAQRLPD_seq3_k16_c0.1_seed200_score1.97_len200_20260511_093152.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_relocate_MAQRLPD_seq3_k16_c0_1_seed201_score0_08_len200_20260511_093153",
+    "url": "/videos/HiMAQ/RLPD/relocate/MAQRLPD_seq3_k16_c0.1_seed201_score0.08_len200_20260511_093153.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_relocate_MAQRLPD_seq3_k16_c0_1_seed202_score_0_11_len200_20260511_093155",
+    "url": "/videos/HiMAQ/RLPD/relocate/MAQRLPD_seq3_k16_c0.1_seed202_score-0.11_len200_20260511_093155.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_relocate_MAQRLPD_seq3_k16_c0_1_seed203_score0_04_len200_20260511_093156",
+    "url": "/videos/HiMAQ/RLPD/relocate/MAQRLPD_seq3_k16_c0.1_seed203_score0.04_len200_20260511_093156.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_RLPD_relocate_MAQRLPD_seq3_k16_c0_1_seed204_score34_13_len200_20260511_093157",
+    "url": "/videos/HiMAQ/RLPD/relocate/MAQRLPD_seq3_k16_c0.1_seed204_score34.13_len200_20260511_093157.mp4",
+    "label": "robot",
+    "method": "HiMAQ_RLPD",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_door_1",
+    "url": "/videos/HiMAQ/SAC/door/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_door_MAQDSAC_seq3_k16_c0_1_seed20000_score32_62_len200_20260511_093439",
+    "url": "/videos/HiMAQ/SAC/door/MAQDSAC_seq3_k16_c0.1_seed20000_score32.62_len200_20260511_093439.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_door_MAQDSAC_seq3_k16_c0_1_seed20001_score37_11_len200_20260511_093440",
+    "url": "/videos/HiMAQ/SAC/door/MAQDSAC_seq3_k16_c0.1_seed20001_score37.11_len200_20260511_093440.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_door_MAQDSAC_seq3_k16_c0_1_seed20002_score31_44_len200_20260511_093441",
+    "url": "/videos/HiMAQ/SAC/door/MAQDSAC_seq3_k16_c0.1_seed20002_score31.44_len200_20260511_093441.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_door_MAQDSAC_seq3_k16_c0_1_seed20003_score31_17_len200_20260511_093442",
+    "url": "/videos/HiMAQ/SAC/door/MAQDSAC_seq3_k16_c0.1_seed20003_score31.17_len200_20260511_093442.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_door_MAQDSAC_seq3_k16_c0_1_seed20004_score36_26_len200_20260511_093444",
+    "url": "/videos/HiMAQ/SAC/door/MAQDSAC_seq3_k16_c0.1_seed20004_score36.26_len200_20260511_093444.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "door"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_hammer_1",
+    "url": "/videos/HiMAQ/SAC/hammer/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_hammer_MAQDSAC_seq3_k16_c0_1_seed200_score2_36_len200_20260511_093418",
+    "url": "/videos/HiMAQ/SAC/hammer/MAQDSAC_seq3_k16_c0.1_seed200_score2.36_len200_20260511_093418.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_hammer_MAQDSAC_seq3_k16_c0_1_seed201_score2_31_len200_20260511_093419",
+    "url": "/videos/HiMAQ/SAC/hammer/MAQDSAC_seq3_k16_c0.1_seed201_score2.31_len200_20260511_093419.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_hammer_MAQDSAC_seq3_k16_c0_1_seed202_score2_31_len200_20260511_093421",
+    "url": "/videos/HiMAQ/SAC/hammer/MAQDSAC_seq3_k16_c0.1_seed202_score2.31_len200_20260511_093421.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_hammer_MAQDSAC_seq3_k16_c0_1_seed203_score2_32_len200_20260511_093422",
+    "url": "/videos/HiMAQ/SAC/hammer/MAQDSAC_seq3_k16_c0.1_seed203_score2.32_len200_20260511_093422.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_hammer_MAQDSAC_seq3_k16_c0_1_seed204_score2_32_len200_20260511_093424",
+    "url": "/videos/HiMAQ/SAC/hammer/MAQDSAC_seq3_k16_c0.1_seed204_score2.32_len200_20260511_093424.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_pen_1",
+    "url": "/videos/HiMAQ/SAC/pen/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_pen_MAQDSAC_seq3_k16_c0_1_seed20000_score117_73_len100_20260511_093338",
+    "url": "/videos/HiMAQ/SAC/pen/MAQDSAC_seq3_k16_c0.1_seed20000_score117.73_len100_20260511_093338.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_pen_MAQDSAC_seq3_k16_c0_1_seed20001_score135_63_len100_20260511_093338",
+    "url": "/videos/HiMAQ/SAC/pen/MAQDSAC_seq3_k16_c0.1_seed20001_score135.63_len100_20260511_093338.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_pen_MAQDSAC_seq3_k16_c0_1_seed20002_score23_09_len100_20260511_093339",
+    "url": "/videos/HiMAQ/SAC/pen/MAQDSAC_seq3_k16_c0.1_seed20002_score23.09_len100_20260511_093339.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_pen_MAQDSAC_seq3_k16_c0_1_seed20003_score_1_77_len100_20260511_093340",
+    "url": "/videos/HiMAQ/SAC/pen/MAQDSAC_seq3_k16_c0.1_seed20003_score-1.77_len100_20260511_093340.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_pen_MAQDSAC_seq3_k16_c0_1_seed20004_score138_13_len100_20260511_093340",
+    "url": "/videos/HiMAQ/SAC/pen/MAQDSAC_seq3_k16_c0.1_seed20004_score138.13_len100_20260511_093340.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_relocate_1",
+    "url": "/videos/HiMAQ/SAC/relocate/1.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_relocate_MAQDSAC_seq3_k16_c0_1_seed200_score9_47_len200_20260511_093211",
+    "url": "/videos/HiMAQ/SAC/relocate/MAQDSAC_seq3_k16_c0.1_seed200_score9.47_len200_20260511_093211.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_relocate_MAQDSAC_seq3_k16_c0_1_seed201_score1_31_len200_20260511_093212",
+    "url": "/videos/HiMAQ/SAC/relocate/MAQDSAC_seq3_k16_c0.1_seed201_score1.31_len200_20260511_093212.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_relocate_MAQDSAC_seq3_k16_c0_1_seed202_score0_07_len200_20260511_093213",
+    "url": "/videos/HiMAQ/SAC/relocate/MAQDSAC_seq3_k16_c0.1_seed202_score0.07_len200_20260511_093213.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_relocate_MAQDSAC_seq3_k16_c0_1_seed203_score10_23_len200_20260511_093215",
+    "url": "/videos/HiMAQ/SAC/relocate/MAQDSAC_seq3_k16_c0.1_seed203_score10.23_len200_20260511_093215.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_HiMAQ_SAC_relocate_MAQDSAC_seq3_k16_c0_1_seed204_score4_33_len200_20260511_093216",
+    "url": "/videos/HiMAQ/SAC/relocate/MAQDSAC_seq3_k16_c0.1_seed204_score4.33_len200_20260511_093216.mp4",
+    "label": "robot",
+    "method": "HiMAQ_SAC",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_Human_door_1",
+    "url": "/videos/Human/door/1.mp4",
+    "label": "human",
+    "method": "human",
+    "environment": "door"
+  },
+  {
+    "id": "vid_Human_door_demo_traj0_steps300",
+    "url": "/videos/Human/door/demo_traj0_steps300.mp4",
+    "label": "human",
+    "method": "human",
+    "environment": "door"
+  },
+  {
+    "id": "vid_Human_door_demo_traj1_steps300",
+    "url": "/videos/Human/door/demo_traj1_steps300.mp4",
+    "label": "human",
+    "method": "human",
+    "environment": "door"
+  },
+  {
+    "id": "vid_Human_door_demo_traj3_steps300",
+    "url": "/videos/Human/door/demo_traj3_steps300.mp4",
+    "label": "human",
+    "method": "human",
+    "environment": "door"
+  },
+  {
+    "id": "vid_Human_door_demo_traj7_steps265",
+    "url": "/videos/Human/door/demo_traj7_steps265.mp4",
+    "label": "human",
+    "method": "human",
+    "environment": "door"
+  },
+  {
+    "id": "vid_Human_hammer_1",
+    "url": "/videos/Human/hammer/1.mp4",
+    "label": "human",
+    "method": "human",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_Human_pen_1",
+    "url": "/videos/Human/pen/1.mp4",
+    "label": "human",
+    "method": "human",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_Human_relocate_1",
+    "url": "/videos/Human/relocate/1.mp4",
+    "label": "human",
+    "method": "human",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_MAQ_IQL_door_1",
+    "url": "/videos/MAQ/IQL/door/1.mp4",
+    "label": "robot",
+    "method": "MAQ_IQL",
+    "environment": "door"
+  },
+  {
+    "id": "vid_MAQ_IQL_hammer_1",
+    "url": "/videos/MAQ/IQL/hammer/1.mp4",
+    "label": "robot",
+    "method": "MAQ_IQL",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_MAQ_IQL_pen_1",
+    "url": "/videos/MAQ/IQL/pen/1.mp4",
+    "label": "robot",
+    "method": "MAQ_IQL",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_MAQ_IQL_relocate_1",
+    "url": "/videos/MAQ/IQL/relocate/1.mp4",
+    "label": "robot",
+    "method": "MAQ_IQL",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_MAQ_RLPD_door_1",
+    "url": "/videos/MAQ/RLPD/door/1.mp4",
+    "label": "robot",
+    "method": "MAQ_RLPD",
+    "environment": "door"
+  },
+  {
+    "id": "vid_MAQ_RLPD_hammer_1",
+    "url": "/videos/MAQ/RLPD/hammer/1.mp4",
+    "label": "robot",
+    "method": "MAQ_RLPD",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_MAQ_RLPD_pen_1",
+    "url": "/videos/MAQ/RLPD/pen/1.mp4",
+    "label": "robot",
+    "method": "MAQ_RLPD",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_MAQ_RLPD_relocate_1",
+    "url": "/videos/MAQ/RLPD/relocate/1.mp4",
+    "label": "robot",
+    "method": "MAQ_RLPD",
+    "environment": "relocate"
+  },
+  {
+    "id": "vid_MAQ_SAC_door_1",
+    "url": "/videos/MAQ/SAC/door/1.mp4",
+    "label": "robot",
+    "method": "MAQ_SAC",
+    "environment": "door"
+  },
+  {
+    "id": "vid_MAQ_SAC_hammer_1",
+    "url": "/videos/MAQ/SAC/hammer/1.mp4",
+    "label": "robot",
+    "method": "MAQ_SAC",
+    "environment": "hammer"
+  },
+  {
+    "id": "vid_MAQ_SAC_pen_1",
+    "url": "/videos/MAQ/SAC/pen/1.mp4",
+    "label": "robot",
+    "method": "MAQ_SAC",
+    "environment": "pen"
+  },
+  {
+    "id": "vid_MAQ_SAC_relocate_1",
+    "url": "/videos/MAQ/SAC/relocate/1.mp4",
+    "label": "robot",
+    "method": "MAQ_SAC",
+    "environment": "relocate"
+  }
+]

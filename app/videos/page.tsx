@@ -36,7 +36,7 @@ export default function VideosPage() {
     <main>
       <h1>All Videos</h1>
       <p className="small">
-        <Link href="/">Back to test</Link> | <Link href="/upload">Upload video</Link>
+        <Link href="/">Back to test</Link>
       </p>
 
       {loading ? (
