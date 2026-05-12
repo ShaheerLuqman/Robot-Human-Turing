@@ -76,8 +76,10 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
   const videoBRef = useRef<HTMLVideoElement | null>(null);
   const watchdogRef = useRef<number | null>(null);
   const advanceTimerRef = useRef<number | null>(null);
-  // Tracks which videos have finished the current cycle
   const endedRef = useRef({ a: false, b: false });
+  // Always-current ref so effects never close over stale answers
+  const answersRef = useRef(answers);
+  answersRef.current = answers;
 
   const trial = trials[index];
   const allReady = mediaReady.a && mediaReady.b && !transitioning;
@@ -98,7 +100,7 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
   }, [testType, hydrated, index, answers]);
 
   useEffect(() => {
-    const saved = answers[index];
+    const saved = answersRef.current[index];
     setMediaReady({ a: false, b: false });
     setTransitioning(false);
     setSelected(saved?.selected ?? null);
@@ -166,15 +168,9 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
     if (!selected || !trial) return;
     const chosenVideo = selected === "a" ? trial.video_a : trial.video_b;
     const correct = chosenVideo.label === "human";
-    const next = [...answers.slice(0, index), {
-      trial_id: trial.id,
-      environment: trial.environment,
-      video_a: trial.video_a,
-      video_b: trial.video_b,
-      selected,
-      correct,
-      feedback: feedback.trim(),
-    }];
+    const updated = { trial_id: trial.id, environment: trial.environment, video_a: trial.video_a, video_b: trial.video_b, selected, correct, feedback: feedback.trim() };
+    const next = [...answers];
+    next[index] = updated;
     setAnswers(next);
     setVerdict("Answer recorded");
     setTransitioning(true);
@@ -188,15 +184,9 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
     if (!selected || !trial) return;
     const chosenVideo = selected === "a" ? trial.video_a : trial.video_b;
     const correct = chosenVideo.label === "human";
-    const next = [...answers.slice(0, index), {
-      trial_id: trial.id,
-      environment: trial.environment,
-      video_a: trial.video_a,
-      video_b: trial.video_b,
-      selected,
-      correct,
-      feedback: feedback.trim(),
-    }];
+    const updated = { trial_id: trial.id, environment: trial.environment, video_a: trial.video_a, video_b: trial.video_b, selected, correct, feedback: feedback.trim() };
+    const next = [...answers];
+    next[index] = updated;
     setAnswers(next);
     setShowModal(true);
   }

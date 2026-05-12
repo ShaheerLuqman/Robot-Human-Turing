@@ -344,6 +344,7 @@ main {
   background: #edf4ff;
   padding: 8px 10px;
   border-radius: 10px;
+  text-align: center;
 }
 
 .loading-main {
