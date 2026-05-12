@@ -72,9 +72,10 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
 
   const videoARef = useRef<HTMLVideoElement | null>(null);
   const videoBRef = useRef<HTMLVideoElement | null>(null);
-  const suppressSyncRef = useRef(false);
   const watchdogRef = useRef<number | null>(null);
   const advanceTimerRef = useRef<number | null>(null);
+  // Tracks which videos have finished the current cycle
+  const endedRef = useRef({ a: false, b: false });
 
   const trialRaw = trials[index];
   // Randomise left/right assignment per trial, stable for the same index
@@ -111,7 +112,17 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
     setSelected(null);
     setVerdict(null);
     setErrorMessage("");
+    endedRef.current = { a: false, b: false };
   }, [index, reloadNonce]);
+
+  useEffect(() => {
+    if (!allReady) return;
+    const { a, b } = getVideos();
+    if (!a || !b) return;
+    endedRef.current = { a: false, b: false };
+    void a.play().catch(() => {});
+    void b.play().catch(() => {});
+  }, [allReady]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (watchdogRef.current) window.clearTimeout(watchdogRef.current);
@@ -130,48 +141,19 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
 
   function getVideos() { return { a: videoARef.current, b: videoBRef.current }; }
 
-  function withSyncSuppressed(action: () => void) {
-    suppressSyncRef.current = true;
-    action();
-    window.setTimeout(() => { suppressSyncRef.current = false; }, 0);
-  }
-
-  function syncPlay(source: "a" | "b") {
-    if (suppressSyncRef.current) return;
-    const { a, b } = getVideos();
-    const src = source === "a" ? a : b;
-    const other = source === "a" ? b : a;
-    if (!src || !other || src.paused || src.ended) return;
-    withSyncSuppressed(() => { void other.play().catch(() => {}); });
-  }
-
-  function syncPause(source: "a" | "b") {
-    if (suppressSyncRef.current) return;
-    const { a, b } = getVideos();
-    const src = source === "a" ? a : b;
-    const other = source === "a" ? b : a;
-    if (!src || !other || !src.paused) return;
-    withSyncSuppressed(() => { other.pause(); });
-  }
-
-  function syncSeek(source: "a" | "b") {
-    if (suppressSyncRef.current) return;
-    const { a, b } = getVideos();
-    const src = source === "a" ? a : b;
-    const other = source === "a" ? b : a;
-    if (!src || !other) return;
-    withSyncSuppressed(() => { other.currentTime = src.currentTime; });
-  }
-
-  function pauseAtShorterEnd() {
+  function handleVideoEnded(side: "a" | "b") {
+    endedRef.current[side] = true;
     const { a, b } = getVideos();
     if (!a || !b) return;
-    const da = Number.isFinite(a.duration) ? a.duration : 0;
-    const db = Number.isFinite(b.duration) ? b.duration : 0;
-    if (!da || !db) return;
-    if ((da <= db ? a : b).ended) {
-      withSyncSuppressed(() => { a.pause(); b.pause(); });
+    if (endedRef.current.a && endedRef.current.b) {
+      // Both done — restart both from the beginning
+      endedRef.current = { a: false, b: false };
+      a.currentTime = 0;
+      b.currentTime = 0;
+      void a.play().catch(() => {});
+      void b.play().catch(() => {});
     }
+    // If only one ended, it stays paused at last frame waiting for the other
   }
 
   function setReady(side: "a" | "b") {
@@ -286,13 +268,9 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
             key={`${video.id}-${reloadNonce}`}
             className="video home-video"
             ref={side === "a" ? videoARef : videoBRef}
-            controls
             preload="auto"
             onCanPlayThrough={() => setReady(side)}
-            onPlay={() => syncPlay(side)}
-            onPause={() => syncPause(side)}
-            onSeeked={() => syncSeek(side)}
-            onTimeUpdate={pauseAtShorterEnd}
+            onEnded={() => handleVideoEnded(side)}
             onError={() => setErrorMessage("Failed to load video. Try reloading.")}
           >
             <source src={video.url} />
