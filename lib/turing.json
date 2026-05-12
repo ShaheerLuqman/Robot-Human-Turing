@@ -19,32 +19,32 @@
     "id": "trial_002",
     "environment": "door",
     "video_a": {
-      "id": "vid_Human_door_1",
-      "url": "/videos/Human/door/1.mp4",
-      "method": "human",
-      "label": "human"
-    },
-    "video_b": {
       "id": "vid_HiMAQ_RLPD_door_1",
       "url": "/videos/HiMAQ/RLPD/door/1.mp4",
       "method": "HiMAQ+RLPD",
       "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_door_1",
+      "url": "/videos/Human/door/1.mp4",
+      "method": "human",
+      "label": "human"
     }
   },
   {
     "id": "trial_003",
     "environment": "door",
     "video_a": {
-      "id": "vid_Human_door_1",
-      "url": "/videos/Human/door/1.mp4",
-      "method": "human",
-      "label": "human"
-    },
-    "video_b": {
       "id": "vid_HiMAQ_IQL_door_1",
       "url": "/videos/HiMAQ/IQL/door/1.mp4",
       "method": "HiMAQ+IQL",
       "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_door_1",
+      "url": "/videos/Human/door/1.mp4",
+      "method": "human",
+      "label": "human"
     }
   },
   {
@@ -67,16 +67,16 @@
     "id": "trial_005",
     "environment": "hammer",
     "video_a": {
-      "id": "vid_Human_hammer_1",
-      "url": "/videos/Human/hammer/1.mp4",
-      "method": "human",
-      "label": "human"
-    },
-    "video_b": {
       "id": "vid_HiMAQ_RLPD_hammer_1",
       "url": "/videos/HiMAQ/RLPD/hammer/1.mp4",
       "method": "HiMAQ+RLPD",
       "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_hammer_1",
+      "url": "/videos/Human/hammer/1.mp4",
+      "method": "human",
+      "label": "human"
     }
   },
   {
@@ -99,16 +99,16 @@
     "id": "trial_007",
     "environment": "pen",
     "video_a": {
-      "id": "vid_Human_pen_1",
-      "url": "/videos/Human/pen/1.mp4",
-      "method": "human",
-      "label": "human"
-    },
-    "video_b": {
       "id": "vid_HiMAQ_SAC_pen_1",
       "url": "/videos/HiMAQ/SAC/pen/1.mp4",
       "method": "HiMAQ+SAC",
       "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_pen_1",
+      "url": "/videos/Human/pen/1.mp4",
+      "method": "human",
+      "label": "human"
     }
   },
   {
@@ -131,16 +131,16 @@
     "id": "trial_009",
     "environment": "pen",
     "video_a": {
-      "id": "vid_Human_pen_1",
-      "url": "/videos/Human/pen/1.mp4",
-      "method": "human",
-      "label": "human"
-    },
-    "video_b": {
       "id": "vid_HiMAQ_IQL_pen_1",
       "url": "/videos/HiMAQ/IQL/pen/1.mp4",
       "method": "HiMAQ+IQL",
       "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_pen_1",
+      "url": "/videos/Human/pen/1.mp4",
+      "method": "human",
+      "label": "human"
     }
   },
   {
@@ -163,16 +163,16 @@
     "id": "trial_011",
     "environment": "relocate",
     "video_a": {
-      "id": "vid_Human_relocate_1",
-      "url": "/videos/Human/relocate/1.mp4",
-      "method": "human",
-      "label": "human"
-    },
-    "video_b": {
       "id": "vid_HiMAQ_RLPD_relocate_1",
       "url": "/videos/HiMAQ/RLPD/relocate/1.mp4",
       "method": "HiMAQ+RLPD",
       "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_relocate_1",
+      "url": "/videos/Human/relocate/1.mp4",
+      "method": "human",
+      "label": "human"
     }
   },
   {

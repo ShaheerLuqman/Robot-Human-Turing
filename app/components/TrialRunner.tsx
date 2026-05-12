@@ -16,6 +16,7 @@ type TrialAnswer = {
   video_b: TrialEntry["video_b"];
   selected: "a" | "b";
   correct: boolean;
+  feedback: string;
 };
 
 type SavedProgress = {
@@ -61,6 +62,7 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
   const [verdict, setVerdict] = useState<string | null>(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [reloadNonce, setReloadNonce] = useState(0);
+  const [feedback, setFeedback] = useState("");
 
   // Modal state
   const [showModal, setShowModal] = useState(false);
@@ -77,18 +79,7 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
   // Tracks which videos have finished the current cycle
   const endedRef = useRef({ a: false, b: false });
 
-  const trialRaw = trials[index];
-  // Randomise left/right assignment per trial, stable for the same index
-  const swapped = useRef<boolean[]>([]);
-  if (swapped.current.length <= index) {
-    swapped.current.push(Math.random() < 0.5);
-  }
-  const isSwapped = swapped.current[index];
-  const trial = trialRaw ? {
-    ...trialRaw,
-    video_a: isSwapped ? trialRaw.video_b : trialRaw.video_a,
-    video_b: isSwapped ? trialRaw.video_a : trialRaw.video_b,
-  } : trialRaw;
+  const trial = trials[index];
   const allReady = mediaReady.a && mediaReady.b && !transitioning;
   const isLast = index === trials.length - 1;
 
@@ -107,13 +98,15 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
   }, [testType, hydrated, index, answers]);
 
   useEffect(() => {
+    const saved = answers[index];
     setMediaReady({ a: false, b: false });
     setTransitioning(false);
-    setSelected(null);
+    setSelected(saved?.selected ?? null);
     setVerdict(null);
     setErrorMessage("");
+    setFeedback(saved?.feedback ?? "");
     endedRef.current = { a: false, b: false };
-  }, [index, reloadNonce]);
+  }, [index, reloadNonce]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (!allReady) return;
@@ -165,12 +158,8 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
       window.clearTimeout(advanceTimerRef.current);
       advanceTimerRef.current = null;
     }
-    const prevIndex = index - 1;
-    const prevAnswer = answers[prevIndex];
-    setAnswers((a) => a.slice(0, prevIndex));
-    setIndex(prevIndex);
+    setIndex(index - 1);
     setReloadNonce(0);
-    if (prevAnswer) setTimeout(() => setSelected(prevAnswer.selected), 0);
   }
 
   function recordAndAdvance() {
@@ -184,6 +173,7 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
       video_b: trial.video_b,
       selected,
       correct,
+      feedback: feedback.trim(),
     }];
     setAnswers(next);
     setVerdict("Answer recorded");
@@ -205,6 +195,7 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
       video_b: trial.video_b,
       selected,
       correct,
+      feedback: feedback.trim(),
     }];
     setAnswers(next);
     setShowModal(true);
@@ -335,6 +326,20 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
         <div className="trial-video-grid">
           {renderPane("a")}
           {renderPane("b")}
+        </div>
+        <div className="trial-feedback">
+          <label className="trial-feedback-label" htmlFor="trial-feedback">
+            Anything worth noting? <span className="trial-feedback-optional">(optional)</span>
+          </label>
+          <textarea
+            id="trial-feedback"
+            className="trial-feedback-input"
+            placeholder="e.g. movement looked unnatural, lighting was inconsistent..."
+            rows={2}
+            disabled={!!verdict}
+            value={feedback}
+            onChange={(e) => setFeedback(e.target.value)}
+          />
         </div>
       </section>
 

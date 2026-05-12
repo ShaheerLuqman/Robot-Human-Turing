@@ -11,6 +11,7 @@ type TrialAnswer = {
   video_b: { id: string; url: string; method: string; label: string };
   selected: "a" | "b";
   correct: boolean;
+  feedback: string;
 };
 
 type SubmitPayload = {

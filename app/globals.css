@@ -797,3 +797,45 @@ main {
 .submit-input:focus {
   border-color: var(--primary);
 }
+
+.trial-feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.trial-feedback-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.trial-feedback-optional {
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.trial-feedback-input {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 14px;
+  background: var(--card);
+  color: var(--text);
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  transition: border-color 120ms ease;
+}
+
+.trial-feedback-input:focus {
+  border-color: var(--primary);
+}
+
+.trial-feedback-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
