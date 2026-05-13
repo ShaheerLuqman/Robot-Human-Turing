@@ -523,6 +523,19 @@ main {
   gap: 32px;
 }
 
+.landing-footer {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted, #888);
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.landing-footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .landing-header h1 {
   margin: 0 0 6px 0;
   font-size: 28px;

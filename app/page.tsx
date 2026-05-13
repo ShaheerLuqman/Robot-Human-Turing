@@ -54,6 +54,10 @@ export default function HomePage() {
           ) : null}
         </div>
       </div>
+
+      <footer className="landing-footer">
+        <p>If you encounter any issues, contact <a href="mailto:shaheer@retrocausal.ai">shaheer@retrocausal.ai</a></p>
+      </footer>
     </main>
   );
 }
