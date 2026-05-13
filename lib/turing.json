@@ -3,52 +3,20 @@
     "id": "trial_001",
     "environment": "door",
     "video_a": {
-      "id": "vid_Human_door_1",
-      "url": "/videos/Human/door/1.mp4",
-      "method": "human",
-      "label": "human"
-    },
-    "video_b": {
       "id": "vid_HiMAQ_SAC_door_1",
       "url": "/videos/HiMAQ/SAC/door/1.mp4",
       "method": "HiMAQ+SAC",
       "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_door_1",
+      "url": "/videos/Human/door/1.mp4",
+      "method": "human",
+      "label": "human"
     }
   },
   {
     "id": "trial_002",
-    "environment": "door",
-    "video_a": {
-      "id": "vid_HiMAQ_RLPD_door_1",
-      "url": "/videos/HiMAQ/RLPD/door/1.mp4",
-      "method": "HiMAQ+RLPD",
-      "label": "robot"
-    },
-    "video_b": {
-      "id": "vid_Human_door_1",
-      "url": "/videos/Human/door/1.mp4",
-      "method": "human",
-      "label": "human"
-    }
-  },
-  {
-    "id": "trial_003",
-    "environment": "door",
-    "video_a": {
-      "id": "vid_HiMAQ_IQL_door_1",
-      "url": "/videos/HiMAQ/IQL/door/1.mp4",
-      "method": "HiMAQ+IQL",
-      "label": "robot"
-    },
-    "video_b": {
-      "id": "vid_Human_door_1",
-      "url": "/videos/Human/door/1.mp4",
-      "method": "human",
-      "label": "human"
-    }
-  },
-  {
-    "id": "trial_004",
     "environment": "hammer",
     "video_a": {
       "id": "vid_Human_hammer_1",
@@ -64,39 +32,7 @@
     }
   },
   {
-    "id": "trial_005",
-    "environment": "hammer",
-    "video_a": {
-      "id": "vid_HiMAQ_RLPD_hammer_1",
-      "url": "/videos/HiMAQ/RLPD/hammer/1.mp4",
-      "method": "HiMAQ+RLPD",
-      "label": "robot"
-    },
-    "video_b": {
-      "id": "vid_Human_hammer_1",
-      "url": "/videos/Human/hammer/1.mp4",
-      "method": "human",
-      "label": "human"
-    }
-  },
-  {
-    "id": "trial_006",
-    "environment": "hammer",
-    "video_a": {
-      "id": "vid_Human_hammer_1",
-      "url": "/videos/Human/hammer/1.mp4",
-      "method": "human",
-      "label": "human"
-    },
-    "video_b": {
-      "id": "vid_HiMAQ_IQL_hammer_1",
-      "url": "/videos/HiMAQ/IQL/hammer/1.mp4",
-      "method": "HiMAQ+IQL",
-      "label": "robot"
-    }
-  },
-  {
-    "id": "trial_007",
+    "id": "trial_003",
     "environment": "pen",
     "video_a": {
       "id": "vid_HiMAQ_SAC_pen_1",
@@ -112,39 +48,7 @@
     }
   },
   {
-    "id": "trial_008",
-    "environment": "pen",
-    "video_a": {
-      "id": "vid_Human_pen_1",
-      "url": "/videos/Human/pen/1.mp4",
-      "method": "human",
-      "label": "human"
-    },
-    "video_b": {
-      "id": "vid_HiMAQ_RLPD_pen_1",
-      "url": "/videos/HiMAQ/RLPD/pen/1.mp4",
-      "method": "HiMAQ+RLPD",
-      "label": "robot"
-    }
-  },
-  {
-    "id": "trial_009",
-    "environment": "pen",
-    "video_a": {
-      "id": "vid_HiMAQ_IQL_pen_1",
-      "url": "/videos/HiMAQ/IQL/pen/1.mp4",
-      "method": "HiMAQ+IQL",
-      "label": "robot"
-    },
-    "video_b": {
-      "id": "vid_Human_pen_1",
-      "url": "/videos/Human/pen/1.mp4",
-      "method": "human",
-      "label": "human"
-    }
-  },
-  {
-    "id": "trial_010",
+    "id": "trial_004",
     "environment": "relocate",
     "video_a": {
       "id": "vid_Human_relocate_1",
@@ -160,17 +64,113 @@
     }
   },
   {
-    "id": "trial_011",
-    "environment": "relocate",
+    "id": "trial_005",
+    "environment": "door",
     "video_a": {
-      "id": "vid_HiMAQ_RLPD_relocate_1",
-      "url": "/videos/HiMAQ/RLPD/relocate/1.mp4",
+      "id": "vid_Human_door_1",
+      "url": "/videos/Human/door/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_HiMAQ_RLPD_door_1",
+      "url": "/videos/HiMAQ/RLPD/door/1.mp4",
+      "method": "HiMAQ+RLPD",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_006",
+    "environment": "hammer",
+    "video_a": {
+      "id": "vid_HiMAQ_RLPD_hammer_1",
+      "url": "/videos/HiMAQ/RLPD/hammer/1.mp4",
       "method": "HiMAQ+RLPD",
       "label": "robot"
     },
     "video_b": {
+      "id": "vid_Human_hammer_1",
+      "url": "/videos/Human/hammer/1.mp4",
+      "method": "human",
+      "label": "human"
+    }
+  },
+  {
+    "id": "trial_007",
+    "environment": "pen",
+    "video_a": {
+      "id": "vid_Human_pen_1",
+      "url": "/videos/Human/pen/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_HiMAQ_RLPD_pen_1",
+      "url": "/videos/HiMAQ/RLPD/pen/1.mp4",
+      "method": "HiMAQ+RLPD",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_008",
+    "environment": "relocate",
+    "video_a": {
       "id": "vid_Human_relocate_1",
       "url": "/videos/Human/relocate/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_HiMAQ_RLPD_relocate_1",
+      "url": "/videos/HiMAQ/RLPD/relocate/1.mp4",
+      "method": "HiMAQ+RLPD",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_009",
+    "environment": "door",
+    "video_a": {
+      "id": "vid_Human_door_1",
+      "url": "/videos/Human/door/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_HiMAQ_IQL_door_1",
+      "url": "/videos/HiMAQ/IQL/door/1.mp4",
+      "method": "HiMAQ+IQL",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_010",
+    "environment": "hammer",
+    "video_a": {
+      "id": "vid_Human_hammer_1",
+      "url": "/videos/Human/hammer/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_HiMAQ_IQL_hammer_1",
+      "url": "/videos/HiMAQ/IQL/hammer/1.mp4",
+      "method": "HiMAQ+IQL",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_011",
+    "environment": "pen",
+    "video_a": {
+      "id": "vid_HiMAQ_IQL_pen_1",
+      "url": "/videos/HiMAQ/IQL/pen/1.mp4",
+      "method": "HiMAQ+IQL",
+      "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_pen_1",
+      "url": "/videos/Human/pen/1.mp4",
       "method": "human",
       "label": "human"
     }
@@ -189,6 +189,198 @@
       "url": "/videos/HiMAQ/IQL/relocate/1.mp4",
       "method": "HiMAQ+IQL",
       "label": "robot"
+    }
+  },
+  {
+    "id": "trial_013",
+    "environment": "door",
+    "video_a": {
+      "id": "vid_Human_door_1",
+      "url": "/videos/Human/door/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_MAQ_SAC_door_1",
+      "url": "/videos/MAQ/SAC/door/1.mp4",
+      "method": "MAQ+SAC",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_014",
+    "environment": "hammer",
+    "video_a": {
+      "id": "vid_Human_hammer_1",
+      "url": "/videos/Human/hammer/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_MAQ_SAC_hammer_1",
+      "url": "/videos/MAQ/SAC/hammer/1.mp4",
+      "method": "MAQ+SAC",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_015",
+    "environment": "pen",
+    "video_a": {
+      "id": "vid_Human_pen_1",
+      "url": "/videos/Human/pen/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_MAQ_SAC_pen_1",
+      "url": "/videos/MAQ/SAC/pen/1.mp4",
+      "method": "MAQ+SAC",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_016",
+    "environment": "relocate",
+    "video_a": {
+      "id": "vid_Human_relocate_1",
+      "url": "/videos/Human/relocate/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_MAQ_SAC_relocate_1",
+      "url": "/videos/MAQ/SAC/relocate/1.mp4",
+      "method": "MAQ+SAC",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_017",
+    "environment": "door",
+    "video_a": {
+      "id": "vid_Human_door_1",
+      "url": "/videos/Human/door/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_MAQ_RLPD_door_1",
+      "url": "/videos/MAQ/RLPD/door/1.mp4",
+      "method": "MAQ+RLPD",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_018",
+    "environment": "hammer",
+    "video_a": {
+      "id": "vid_MAQ_RLPD_hammer_1",
+      "url": "/videos/MAQ/RLPD/hammer/1.mp4",
+      "method": "MAQ+RLPD",
+      "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_hammer_1",
+      "url": "/videos/Human/hammer/1.mp4",
+      "method": "human",
+      "label": "human"
+    }
+  },
+  {
+    "id": "trial_019",
+    "environment": "pen",
+    "video_a": {
+      "id": "vid_Human_pen_1",
+      "url": "/videos/Human/pen/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_MAQ_RLPD_pen_1",
+      "url": "/videos/MAQ/RLPD/pen/1.mp4",
+      "method": "MAQ+RLPD",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_020",
+    "environment": "relocate",
+    "video_a": {
+      "id": "vid_MAQ_RLPD_relocate_1",
+      "url": "/videos/MAQ/RLPD/relocate/1.mp4",
+      "method": "MAQ+RLPD",
+      "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_relocate_1",
+      "url": "/videos/Human/relocate/1.mp4",
+      "method": "human",
+      "label": "human"
+    }
+  },
+  {
+    "id": "trial_021",
+    "environment": "door",
+    "video_a": {
+      "id": "vid_Human_door_1",
+      "url": "/videos/Human/door/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_MAQ_IQL_door_1",
+      "url": "/videos/MAQ/IQL/door/1.mp4",
+      "method": "MAQ+IQL",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_022",
+    "environment": "hammer",
+    "video_a": {
+      "id": "vid_MAQ_IQL_hammer_1",
+      "url": "/videos/MAQ/IQL/hammer/1.mp4",
+      "method": "MAQ+IQL",
+      "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_hammer_1",
+      "url": "/videos/Human/hammer/1.mp4",
+      "method": "human",
+      "label": "human"
+    }
+  },
+  {
+    "id": "trial_023",
+    "environment": "pen",
+    "video_a": {
+      "id": "vid_Human_pen_1",
+      "url": "/videos/Human/pen/1.mp4",
+      "method": "human",
+      "label": "human"
+    },
+    "video_b": {
+      "id": "vid_MAQ_IQL_pen_1",
+      "url": "/videos/MAQ/IQL/pen/1.mp4",
+      "method": "MAQ+IQL",
+      "label": "robot"
+    }
+  },
+  {
+    "id": "trial_024",
+    "environment": "relocate",
+    "video_a": {
+      "id": "vid_MAQ_IQL_relocate_1",
+      "url": "/videos/MAQ/IQL/relocate/1.mp4",
+      "method": "MAQ+IQL",
+      "label": "robot"
+    },
+    "video_b": {
+      "id": "vid_Human_relocate_1",
+      "url": "/videos/Human/relocate/1.mp4",
+      "method": "human",
+      "label": "human"
     }
   }
 ]

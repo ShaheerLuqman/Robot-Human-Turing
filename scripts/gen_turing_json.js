@@ -4,10 +4,14 @@ const path = require("path");
 const videos = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "lib", "videos.json"), "utf8"));
 
 const HIMAQ_METHODS = ["HiMAQ+SAC", "HiMAQ+RLPD", "HiMAQ+IQL"];
+const MAQ_METHODS   = ["MAQ+SAC",   "MAQ+RLPD",   "MAQ+IQL"];
 const METHOD_MAP = {
   "HiMAQ+SAC":  "HiMAQ_SAC",
   "HiMAQ+RLPD": "HiMAQ_RLPD",
   "HiMAQ+IQL":  "HiMAQ_IQL",
+  "MAQ+SAC":    "MAQ_SAC",
+  "MAQ+RLPD":   "MAQ_RLPD",
+  "MAQ+IQL":    "MAQ_IQL",
 };
 const ENVIRONMENTS = ["door", "hammer", "pen", "relocate"];
 
@@ -32,16 +36,20 @@ function pickFirst(method, environment) {
 const trials = [];
 let trialIndex = 1;
 
-for (const environment of ENVIRONMENTS) {
-  for (const himaqLabel of HIMAQ_METHODS) {
+for (const label of [...HIMAQ_METHODS, ...MAQ_METHODS]) {
+  for (const environment of ENVIRONMENTS) {
     const humanVideo = pickFirst("human", environment);
-    const robotVideo = pickFirst(METHOD_MAP[himaqLabel], environment);
+    const robotVideo = pickFirst(METHOD_MAP[label], environment);
+
+    const humanSlot = { id: humanVideo.id, url: humanVideo.url, method: "human", label: humanVideo.label };
+    const robotSlot = { id: robotVideo.id, url: robotVideo.url, method: label, label: robotVideo.label };
+    const [video_a, video_b] = Math.random() < 0.5 ? [humanSlot, robotSlot] : [robotSlot, humanSlot];
 
     trials.push({
       id: `trial_${String(trialIndex).padStart(3, "0")}`,
       environment,
-      video_a: { id: humanVideo.id, url: humanVideo.url, method: "human", label: humanVideo.label },
-      video_b: { id: robotVideo.id, url: robotVideo.url, method: himaqLabel, label: robotVideo.label },
+      video_a,
+      video_b,
     });
     trialIndex++;
   }

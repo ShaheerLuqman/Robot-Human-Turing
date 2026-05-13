@@ -216,7 +216,11 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
   function renderPane(side: "a" | "b") {
     const video = side === "a" ? trial.video_a : trial.video_b;
     const isSelected = selected === side;
-    const tagLabel = selected ? (isSelected ? "Human" : "Robot") : "Unselected";
+    const tagLabel = selected
+      ? testType === "ranking"
+        ? (isSelected ? "More Human" : "Less Human")
+        : (isSelected ? "Human" : "Robot")
+      : "Unselected";
     const tagClass = selected ? (isSelected ? "human" : "robot") : "none";
 
     return (

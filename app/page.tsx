@@ -29,8 +29,8 @@ export default function HomePage() {
         <div className="landing-card-wrapper">
           <Link href="/turing" className="landing-card">
             <h2>Turing Test</h2>
-            <p>Can you tell Human from HiMAQ? Human video vs one robot video per environment and method.</p>
-            <span className="landing-badge">12 trials</span>
+            <p>Can you tell Human from Robot? Human video vs one robot video per environment and method.</p>
+            <span className="landing-badge">{turingTrials.length} trials</span>
           </Link>
           {turingProgress ? (
             <div className="resume-banner">
