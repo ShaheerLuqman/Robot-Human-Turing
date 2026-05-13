@@ -19,6 +19,7 @@ type SubmitPayload = {
   email: string;
   test_type: "turing" | "ranking";
   answers: TrialAnswer[];
+  overall_feedback?: string;
 };
 
 export async function POST(req: NextRequest) {
@@ -48,6 +49,7 @@ export async function POST(req: NextRequest) {
     name: payload.name.trim(),
     email: payload.email.trim(),
     test_type: payload.test_type,
+    overall_feedback: payload.overall_feedback?.trim() ?? "",
     answers: payload.answers,
   };
 

@@ -71,6 +71,7 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [overallFeedback, setOverallFeedback] = useState("");
 
   const videoARef = useRef<HTMLVideoElement | null>(null);
   const videoBRef = useRef<HTMLVideoElement | null>(null);
@@ -199,7 +200,7 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
       const res = await fetch("/api/responses", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name.trim(), email: email.trim(), test_type: testType, answers }),
+        body: JSON.stringify({ name: name.trim(), email: email.trim(), test_type: testType, answers, overall_feedback: overallFeedback.trim() }),
       });
       if (!res.ok) throw new Error("Submission failed");
       clearProgress(testType);
@@ -403,7 +404,18 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={submitting}
-                    onKeyDown={(e) => { if (e.key === "Enter") void submitResults(); }}
+                  />
+                  <label className="submit-label" htmlFor="sub-overall-feedback">
+                    Overall observations <span className="trial-feedback-optional">(optional)</span>
+                  </label>
+                  <textarea
+                    id="sub-overall-feedback"
+                    className="trial-feedback-input"
+                    placeholder="Anything you noticed across the test — patterns, strategies, general impressions..."
+                    rows={3}
+                    disabled={submitting}
+                    value={overallFeedback}
+                    onChange={(e) => setOverallFeedback(e.target.value)}
                   />
                   {submitError ? <p className="small" style={{ color: "#b91c1c", marginTop: 4 }}>{submitError}</p> : null}
                   <div className="modal-actions">
