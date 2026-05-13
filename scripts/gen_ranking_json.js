@@ -13,7 +13,7 @@ const METHOD_MAP = {
   "HiMAQ+RLPD":  "HiMAQ_RLPD",
   "HiMAQ+IQL":   "HiMAQ_IQL",
 };
-const ENVIRONMENTS = ["door", "hammer", "pen", "relocate"];
+const ENVIRONMENTS = ["door", "relocate", "hammer", "pen"];
 
 // Index 1.mp4 videos by method+environment
 const index = new Map();
@@ -37,14 +37,17 @@ for (let i = 0; i < METHODS.length; i++) {
   for (let j = i + 1; j < METHODS.length; j++) {
     // Pick a consistent environment per pair using index sum mod 4
     const environment = ENVIRONMENTS[(i + j) % ENVIRONMENTS.length];
-    const videoA = pick(METHODS[i], environment);
-    const videoB = pick(METHODS[j], environment);
+    const v1 = pick(METHODS[i], environment);
+    const v2 = pick(METHODS[j], environment);
+    const slot1 = { id: v1.id, url: v1.url, method: METHODS[i], label: v1.label };
+    const slot2 = { id: v2.id, url: v2.url, method: METHODS[j], label: v2.label };
+    const [video_a, video_b] = Math.random() < 0.5 ? [slot1, slot2] : [slot2, slot1];
 
     trials.push({
       id: `rank_${String(trialIndex).padStart(3, "0")}`,
       environment,
-      video_a: { id: videoA.id, url: videoA.url, method: METHODS[i], label: videoA.label },
-      video_b: { id: videoB.id, url: videoB.url, method: METHODS[j], label: videoB.label },
+      video_a,
+      video_b,
     });
     trialIndex++;
   }
