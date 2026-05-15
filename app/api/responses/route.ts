@@ -20,6 +20,7 @@ type SubmitPayload = {
   test_type: "turing" | "ranking";
   answers: TrialAnswer[];
   overall_feedback?: string;
+  is_final?: boolean;
 };
 
 export async function POST(req: NextRequest) {
@@ -43,20 +44,23 @@ export async function POST(req: NextRequest) {
   const id = `${payload.test_type}_${randomUUID().replace(/-/g, "")}`;
   const submittedAt = new Date().toISOString();
 
+  const isFinalized = payload.is_final ?? true;
+
   const data = {
     id,
     submitted_at: submittedAt,
     name: payload.name.trim(),
     email: payload.email.trim(),
     test_type: payload.test_type,
+    is_final: isFinalized,
     overall_feedback: payload.overall_feedback?.trim() ?? "",
     answers: payload.answers,
   };
 
   await db.query(
-    `insert into responses (id, submitted_at, name, email, test_type, data)
-     values ($1, $2, $3, $4, $5, $6)`,
-    [id, submittedAt, data.name, data.email, data.test_type, JSON.stringify(data)]
+    `insert into responses (id, submitted_at, name, email, test_type, is_final, data)
+     values ($1, $2, $3, $4, $5, $6, $7)`,
+    [id, submittedAt, data.name, data.email, data.test_type, isFinalized, JSON.stringify(data)]
   );
 
   return NextResponse.json({ id });

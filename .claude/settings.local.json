@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Path \"d:\\\\Robot-Human-Turing\" -Force)",
+      "Bash(Select-Object -Property Name, PSIsContainer)",
+      "PowerShell(New-Item -ItemType Directory -Path \"d:\\\\Robot-Human-Turing\\\\scripts\\\\analysis\" -Force)",
+      "PowerShell(Move-Item -Path \"d:\\\\Robot-Human-Turing\\\\scripts\\\\plot_turing_results.py\" -Destination \"d:\\\\Robot-Human-Turing\\\\scripts\\\\analysis\\\\plot_turing_results.py\")"
+    ]
+  }
+}
