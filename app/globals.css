@@ -26,6 +26,7 @@ main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 14px;
+  width: 100%;
 }
 
 .grid {
@@ -49,6 +50,12 @@ main {
   border-radius: 12px;
   border: 1px solid var(--border);
   background: #f8fafc;
+}
+
+@media (max-width: 640px) {
+  .video {
+    height: 38vh;
+  }
 }
 
 .btn {
@@ -118,11 +125,28 @@ main {
   padding-bottom: 10px;
 }
 
+@media (max-width: 640px) {
+  .home-main {
+    max-width: 100%;
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+}
+
 .home-card {
   flex: 1;
   min-height: 0;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 640px) {
+  .home-card {
+    flex: none;
+  }
 }
 
 .trial-header h1 {
@@ -347,6 +371,29 @@ main {
   text-align: center;
 }
 
+@media (max-width: 640px) {
+  .actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .primary-btn {
+    width: auto;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  .secondary-btn {
+    width: auto;
+    min-width: 0;
+    flex: 0 1 auto;
+  }
+  .actual-label {
+    min-width: 0;
+    width: 100%;
+    order: -1;
+    text-align: center;
+  }
+}
+
 .loading-main {
   display: flex;
   flex-direction: column;
@@ -414,6 +461,7 @@ main {
 @media (max-width: 980px) {
   .trial-video-grid {
     grid-template-columns: 1fr;
+    flex: none;
   }
 }
 
@@ -437,7 +485,15 @@ main {
   box-shadow: var(--shadow);
   min-width: 320px;
   max-width: 420px;
+  width: 100%;
   text-align: center;
+}
+
+@media (max-width: 480px) {
+  .startup-loading-card {
+    min-width: 0;
+    padding: 28px 24px;
+  }
 }
 
 .startup-orbit {
@@ -523,6 +579,13 @@ main {
   gap: 32px;
 }
 
+@media (max-width: 640px) {
+  .home-landing {
+    padding: 32px 16px;
+    gap: 20px;
+  }
+}
+
 .landing-footer {
   text-align: center;
   font-size: 13px;
@@ -539,6 +602,12 @@ main {
 .landing-header h1 {
   margin: 0 0 6px 0;
   font-size: 28px;
+}
+
+@media (max-width: 480px) {
+  .landing-header h1 {
+    font-size: 22px;
+  }
 }
 
 .landing-grid {
@@ -559,6 +628,12 @@ main {
   text-decoration: none;
   color: var(--text);
   transition: transform 120ms ease, box-shadow 120ms ease, border-color 120ms ease;
+}
+
+@media (max-width: 480px) {
+  .landing-card {
+    padding: 20px 16px;
+  }
 }
 
 .landing-card:hover {
@@ -608,6 +683,8 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
   padding: 10px 14px;
   border: 1px solid #cfe0ff;
   border-radius: 12px;
@@ -671,6 +748,16 @@ main {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+@media (max-width: 480px) {
+  .trial-header-top {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .trial-header-left h1 {
+    font-size: 16px;
+  }
 }
 
 .reset-btn {
@@ -770,6 +857,25 @@ main {
   width: 100%;
   max-width: 400px;
   padding: 32px;
+}
+
+@media (max-width: 480px) {
+  .modal-backdrop {
+    padding: 12px;
+    align-items: flex-end;
+  }
+  .modal-card {
+    padding: 20px 16px;
+    border-radius: 18px 18px 12px 12px;
+  }
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+  .modal-actions .primary-btn,
+  .modal-actions .secondary-btn {
+    width: 100%;
+    flex: none;
+  }
 }
 
 .modal-card h2 {
