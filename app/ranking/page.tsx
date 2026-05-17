@@ -5,8 +5,8 @@ export default function RankingPage() {
   return (
     <TrialRunner
       trials={rankingTrials}
-      title="Ranking Test"
-      subtitle="Which video looks more human? Click it, then submit."
+      title="You see two robots doing a simple task."
+      subtitle="Both robots are controlled by AI, but using different methods. Can you select the robot that looks more human?"
       testType="ranking"
     />
   );

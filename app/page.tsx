@@ -29,7 +29,7 @@ export default function HomePage() {
         <div className="landing-card-wrapper">
           <Link href="/turing" className="landing-card">
             <h2>Turing Test</h2>
-            <p>Can you tell Human from Robot? Human video vs one robot video per environment and method.</p>
+            <p>Two robots, one controlled by a human researcher and one by AI. Can you tell which is which?</p>
             <span className="landing-badge">{turingTrials.length} trials</span>
           </Link>
           {turingProgress ? (
@@ -43,7 +43,7 @@ export default function HomePage() {
         <div className="landing-card-wrapper">
           <Link href="/ranking" className="landing-card">
             <h2>Ranking Test</h2>
-            <p>Compare all 7 methods head-to-head. 21 pairs covering every combination across environments.</p>
+            <p>Two robots, both controlled by AI but using different methods. Can you tell which one looks more human?</p>
             <span className="landing-badge">21 trials</span>
           </Link>
           {rankingProgress ? (

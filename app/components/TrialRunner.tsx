@@ -324,12 +324,12 @@ export default function TrialRunner({ trials, title, subtitle, testType }: Props
         </div>
         <div className="trial-feedback">
           <label className="trial-feedback-label" htmlFor="trial-feedback">
-            Anything worth noting? <span className="trial-feedback-optional">(optional)</span>
+            Observations <span className="trial-feedback-optional">(optional)</span>
           </label>
           <textarea
             id="trial-feedback"
             className="trial-feedback-input"
-            placeholder="e.g. movement looked unnatural, lighting was inconsistent..."
+            placeholder="e.g. Video A looked more natural. Video B seemed robotic. Both looked the same to me."
             rows={2}
             disabled={!!verdict}
             value={feedback}
